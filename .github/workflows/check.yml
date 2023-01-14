@@ -35,7 +35,7 @@ jobs:
         uses: jsdaniell/create-json@v1.2.2
         with:
           name: "credentials.json"
-          json: ${{ secrects.CREDENTIALS}}
+          json: ${{ secrets.CREDENTIALS}}
 
       # Running our python script
       - name: Running Email Check
