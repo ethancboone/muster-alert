@@ -32,5 +32,5 @@ jobs:
 
       # Running our python script
       - name: Running Email Check
-        run: python src/inbox_check.py
+        run: python src/main.py
       

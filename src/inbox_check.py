@@ -8,14 +8,14 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
-from datetime import date, timedelta
+from datetime import date
 
 
 # If modifying these scopes, delete the file token.json.
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 
 
-def main():
+def daily_inbox_check():
     """Shows basic usage of the Gmail API.
     Lists the user's Gmail labels.
     """
@@ -75,4 +75,5 @@ def main():
     return('Test Virtual Muster' in emails)
 
 if __name__ == '__main__':
-    response = main()
+    response = daily_inbox_check()
+    print(response)
