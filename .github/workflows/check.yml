@@ -30,6 +30,20 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
 
+      # Creating credentials.json
+      - name: Create credentials.json
+        uses: jsdaniell/create-json@v1.2.2
+        with:
+          name: "credentials.json"
+          json: ${{ secrets.CREDENTIALS}}
+
+      # Creating token.json
+      - name: Create token.json
+        uses: jsdaniell/create-json@v1.2.2
+        with:
+          name: "token.json"
+          json: ${{ secrets.TOKEN}}
+
       # Running our python script
       - name: Running Email Check
         run: python src/main.py ${{ secrets.TWILIO_SID }} ${{ secrets.TWILIO_TOKEN }} ${{ secrets.TWILIO_PHONE_NUMBER }} ${{ secrets.MY_PHONE_NUMBER }}
