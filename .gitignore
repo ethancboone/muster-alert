@@ -1,3 +1,7 @@
+# User-Defined
+credentials.json
+token.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -134,7 +138,8 @@ dmypy.json
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*

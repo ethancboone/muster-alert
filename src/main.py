@@ -16,15 +16,13 @@ client = Client(account_sid, auth_token)
 
 if response is not True:
     client.messages.create(
-        body="You still need to muster. You can access the muster page at the \
-            following link: https://forms.gle/RJRUCWYVro5Qu62y6.",
+        body="You still need to muster.\nYou can access the muster page at the following link:\n\thttps://forms.gle/RJRUCWYVro5Qu62y6.",
         from_=twilio_phone,
         to=my_phone
     )
 else:
     client.messages.create(
-        body="You've mustered. View your response at the following link: \
-            https://forms.gle/RJRUCWYVro5Qu62y6.",
+        body="You've mustered.\nView your response at the following link:\n\thttps://forms.gle/RJRUCWYVro5Qu62y6.",
         from_=twilio_phone,
         to=my_phone
     )
