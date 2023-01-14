@@ -19,10 +19,10 @@ def daily_inbox_check():
     """Shows basic usage of the Gmail API.
     Lists the user's Gmail labels.
     """
-    
+
     # Create a dictionary to store our email information
     emails = []
-      
+
     creds = None
     # The file token.json stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
@@ -42,21 +42,21 @@ def daily_inbox_check():
             token.write(creds.to_json())
 
     try:
-        
+
         # This is used so we can query messages for only today 
         today = date.today()
-        
+
         # Dates have to formatted in YYYY/MM/DD format for gmail
         query = f"after: {today.strftime('%Y/%m/%d')}"
-        
+
         # Call the Gmail API
         service = build('gmail', 'v1', credentials=creds)
         results = service.users().messages().list(userId='me', q=query).execute()
         messages = results.get('messages')
-        
+
         for msg in messages:
             txt = service.users().messages().get(userId='me', id=msg['id']).execute()
-            
+
             try:
                 payload = txt['payload']
                 headers = payload['headers']
@@ -67,7 +67,7 @@ def daily_inbox_check():
                         emails.append(subject)
             except:
                 pass
-            
+
     except HttpError as error:
         # TODO(developer) - Handle errors from gmail API.
         print(f'An error occurred: {error}')
@@ -77,4 +77,4 @@ def daily_inbox_check():
 if __name__ == '__main__':
     response = daily_inbox_check()
     print(response)
-    
+
