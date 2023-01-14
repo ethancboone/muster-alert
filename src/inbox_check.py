@@ -72,8 +72,9 @@ def daily_inbox_check():
         # TODO(developer) - Handle errors from gmail API.
         print(f'An error occurred: {error}')
 
-    return('Test Virtual Muster' in emails)
+    return 'Test Virtual Muster' in emails
 
 if __name__ == '__main__':
     response = daily_inbox_check()
     print(response)
+    
