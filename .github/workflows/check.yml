@@ -32,5 +32,5 @@ jobs:
 
       # Running our python script
       - name: Running Email Check
-        run: python src/main.py
+        run: python src/main.py ${{ secrets.TWILIO_SID }} ${{ secrets.TWILIO_TOKEN }} ${{ secrets.TWILIO_PHONE_NUMBER }} ${{ secrets.MY_PHONE_NUMBER }}
       

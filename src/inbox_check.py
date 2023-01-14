@@ -43,7 +43,7 @@ def daily_inbox_check():
 
     try:
 
-        # This is used so we can query messages for only today 
+        # This is used so we can query messages for only today
         today = date.today()
 
         # Dates have to formatted in YYYY/MM/DD format for gmail
@@ -74,7 +74,7 @@ def daily_inbox_check():
 
     return 'Test Virtual Muster' in emails
 
+
 if __name__ == '__main__':
     response = daily_inbox_check()
     print(response)
-
