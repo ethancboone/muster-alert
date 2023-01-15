@@ -65,7 +65,7 @@ def daily_inbox_check():
                     if d['name'] == 'Subject':
                         subject = d['value']
                         emails.append(subject)
-            except:
+            except Exception:
                 pass
 
     except HttpError as error:
