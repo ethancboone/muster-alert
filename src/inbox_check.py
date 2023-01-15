@@ -8,7 +8,8 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
-from datetime import date
+from datetime import datetime
+from pytz import timezone
 
 
 # If modifying these scopes, delete the file token.json.
@@ -44,7 +45,7 @@ def daily_inbox_check():
     try:
 
         # This is used so we can query messages for only today
-        today = date.today()
+        today = datetime.now(timezone('US/Central')).replace(hour=0, minute=0, second=0, microsecond=0)
 
         # Dates have to formatted in YYYY/MM/DD format for gmail
         query = f"after: {today.strftime('%Y/%m/%d')}"
