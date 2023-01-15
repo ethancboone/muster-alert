@@ -1,6 +1,7 @@
 # Daily Muster Alert
 
 ![reminder-status](https://github.com/ethancboone/muster-alert/actions/workflows/check.yml/badge.svg)
+![lint](https://github.com/ethancboone/muster-alert/actions/workflows/lint.yml/badge.svg)
 
 # Disclaimer 
 This tool is not a replacement for manually checking the status of your Google Forms muster response. It is still your responsibility to ensure that you have mustered every morning. 
