@@ -1,4 +1,4 @@
-google_api_python_client==2.74.0
+google_api_python_client==2.80.0
 google_auth_oauthlib==0.8.0
 protobuf==4.21.12
 twilio==7.16.2
